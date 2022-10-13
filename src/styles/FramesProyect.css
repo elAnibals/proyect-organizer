@@ -1,0 +1,14 @@
+Card{
+    height: 100%;
+}
+Row{
+    height: 100%;
+}
+Container{
+    height: 70vh;
+}
+
+#add-friend{
+    width: 30px;
+    height: 30px;
+}

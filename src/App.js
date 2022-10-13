@@ -1,5 +1,5 @@
 import './App.css';
-import Login from "./components/Login"
+import Dashboard from "./pages/Dashboard"
 import {BrowserRouter, Routes, Route} from "react-router-dom";
 
 function App() {
@@ -8,7 +8,8 @@ function App() {
       <div className='main-container'>
         <BrowserRouter>
           <Routes>
-            <Route exact path="/" element={<Login/>}/>
+            <Route exact path="/" element={<Dashboard/>}/>
+            
           </Routes>
         </BrowserRouter>
       </div>
