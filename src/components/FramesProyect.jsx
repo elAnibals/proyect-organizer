@@ -11,7 +11,7 @@ import {
     ProgressBar,
     Button,
 } from "react-bootstrap";
-
+//wenas noshes
 export const Kanban = () =>{
     const alertClicked = () => {
         alert('You clicked the third ListGroupItem');
