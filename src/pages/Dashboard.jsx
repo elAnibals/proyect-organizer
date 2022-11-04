@@ -1,17 +1,20 @@
 import React from "react";
 import Header from "../components/Header";
 import {Container} from "react-bootstrap";
-import {Kanban} from "../components/FramesProyect"
+import FrameProyect from "../components/FramesProyect"
 import "../styles/Dashboar.css"
+
 
 const Dashboard = () =>{
     return (
-        <Container fluid>
+        <div>
             <Header/>
             <div className="frame-container">
-                <Kanban/>
+                <FrameProyect metodologi="kanban"/>
+                
             </div>
-        </Container>
+        
+        </div>
                 
     );
 }

@@ -1,5 +1,10 @@
 import React from "react";
-import { ListGroup, ListGroupItem } from "react-bootstrap";
+import { 
+    ListGroup, 
+    Accordion,
+    Button,
+    Container, 
+} from "react-bootstrap";
 
 export const NormalActivity = (props) =>{
     return(
@@ -10,14 +15,26 @@ export const NormalActivity = (props) =>{
 }
 
 export const Epic = (props) =>{
-    return(
-        <ListGroup as="ul">
-            <ListGroup.Item action onClick={props.func} >
-                {props.epicName}
-            </ListGroup.Item>
-            <ListGroupItem action onClick={props.func}>
-                HistoriaChida
-            </ListGroupItem>
-        </ListGroup>
-    );
+  return(
+    <Accordion.Item eventKey="0">
+        <Accordion.Header>
+            {props.epicName} &nbsp;
+        </Accordion.Header>
+        <Accordion.Body>
+            <ListGroup>
+                <ListGroup.Item action>
+                    historia 1
+                </ListGroup.Item>
+            </ListGroup>
+            <p></p>
+            <Container>
+                <Button variant="primary" className="rounded-circle">+</Button>
+            </Container>
+        </Accordion.Body>
+    </Accordion.Item>
+  );
+}
+
+const History = (props) =>{
+
 }

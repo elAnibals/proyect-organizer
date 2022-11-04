@@ -10,7 +10,7 @@ function Login(){
                     <Card className="login">
                         <Card.Body>
                             <h2>Login</h2>
-                            <Card.Text>Plese enter your email and password :)</Card.Text>
+                            <Card.Text>Porfa ingresa tu correo y contraseña :)</Card.Text>
                             <Form>
                                 <Form.Group controlId="formBasicEmail">
                                     <Form.Control type="email" placeholder="Enter email" />
@@ -20,9 +20,9 @@ function Login(){
                                     <Form.Control type="Password" placeholder="Password" />
                                 </Form.Group>
                                 <p></p>
-                                <Button variant="primary" type="submit" > Sing in </Button>
+                                <Button variant="primary" type="submit" > Iniciar sesion </Button>
                             </Form>
-                            <Card.Text>Don't have an account? <a href="google.com">sign up</a></Card.Text>
+                            <Card.Text>¿No tienes una cuenta? :( <a href="google.com">Registrarse</a></Card.Text>
                         </Card.Body>
                     </Card>
                 </div>

@@ -1,5 +1,5 @@
 import React from "react";
-import { Col, Card, ListGroup} from "react-bootstrap"
+import { Col, Card, ListGroup, Accordion} from "react-bootstrap"
 import { NormalActivity ,Epic} from "./Activities";
 
 
@@ -26,14 +26,14 @@ export const ActivityList = (props) => {
 
 export const Backlog = (props) =>{
     return (
-        
         <Col>
             <Card>
                 <Card.Header>Backlog</Card.Header>
                 <Card.Body>
-                    <Epic func={alertClicked} epicName="Epica chida" />
-                    <p></p>
-                    <Epic func={alertClicked} epicName="Epica 2"/>
+                    <Accordion defaultActiveKey="0">
+                        <Epic epicName="Epica chida" />
+                    </Accordion>
+
                 </Card.Body>
             </Card>
         </Col>
