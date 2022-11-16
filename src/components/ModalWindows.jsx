@@ -1,10 +1,9 @@
 import React from "react";
-import { Modal, Button } from "react-bootstrap";
+import { Modal, Button, ListGroup, ListGroupItem } from "react-bootstrap";
 
 export const ModalEpic = (props) =>{
   return (
     <Modal
-      {...props}
       size="lg"
       aria-labelledby="contained-modal-title-vcenter"
       centered
@@ -24,6 +23,38 @@ export const ModalEpic = (props) =>{
       </Modal.Body>
       <Modal.Footer>
         <Button onClick={props.onHide}>Close</Button>
+      </Modal.Footer>
+    </Modal>
+  );
+}
+
+export const MemebersModal = (props) =>{
+  return(
+    <Modal
+      {...props}
+      size="lg"
+      aria-labelledby="contained-modal-title-vcenter"
+      centered
+    >
+      <Modal.Header closeButton>
+        <Modal.Title id="contained-modal-title-vcenter">
+          Miembros
+        </Modal.Title>
+      </Modal.Header>
+      <Modal.Body>
+        <ListGroup as="ul">
+         {props.members.map((member)=>{
+                    return (
+                        <ListGroup.Item>{
+                          member.name+" "+"("+member.rol+")"
+                          }</ListGroup.Item>
+                    );
+                })} 
+                
+        </ListGroup>
+      </Modal.Body>
+      <Modal.Footer>
+        <Button onClick={props.onHide}>Agregar</Button>
       </Modal.Footer>
     </Modal>
   );
