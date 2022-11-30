@@ -1,5 +1,8 @@
 import React from "react";
-import { Modal, Button, ListGroup, ListGroupItem } from "react-bootstrap";
+import { Modal, Button, ListGroup, Form, Row, Col } from "react-bootstrap";
+import Member from "./Member";
+
+const {useState} = React
 
 export const ModalEpic = (props) =>{
   return (
@@ -29,6 +32,20 @@ export const ModalEpic = (props) =>{
 }
 
 export const MemebersModal = (props) =>{
+  const [addingMember, setAddingMember] = useState(false);
+
+  const changeToTrue = () =>{
+    setAddingMember(true);
+  }
+
+  const changeToFalse = () =>{
+    setAddingMember(false);
+  }
+
+  const addMember = () =>{
+    setAddingMember(false);
+  }
+
   return(
     <Modal
       {...props}
@@ -38,24 +55,67 @@ export const MemebersModal = (props) =>{
     >
       <Modal.Header closeButton>
         <Modal.Title id="contained-modal-title-vcenter">
-          Miembros
+        { addingMember ?
+          <div>Agregar Miembro</div>
+          :
+          <div>Miembros</div>
+        }
         </Modal.Title>
       </Modal.Header>
       <Modal.Body>
-        <ListGroup as="ul">
-         {props.members.map((member)=>{
-                    return (
-                        <ListGroup.Item>{
-                          member.name+" "+"("+member.rol+")"
-                          }</ListGroup.Item>
-                    );
-                })} 
-                
-        </ListGroup>
+        { addingMember ?
+          <Form>
+            <Row>
+              <Col>
+                <Form.Control type="search" placeholder="Nombre" />
+              </Col>
+              <Col>
+                <Form.Select>
+                  <option>Scrum Master</option>
+                  <option>Product Owner</option>
+                  <option>Tester</option>
+                  <option>Desarrollador</option>
+                </Form.Select>
+              </Col>
+            </Row>
+          </Form>
+          :
+          <ListGroup as="ul">
+            {props.members.map((member)=>{
+            return (
+              <Member member={member}/>
+            );
+            })} 
+          </ListGroup>
+        }
       </Modal.Body>
       <Modal.Footer>
-        <Button onClick={props.onHide}>Agregar</Button>
+        { addingMember ?
+        <div>
+          <Button
+            variant="outline-danger"
+            onClick={changeToFalse}
+          >
+            <i class="bi bi-x"></i>
+          </Button>
+          &nbsp;
+          <Button
+            variant="outline-success"
+            onClick={addMember}
+          >
+            <i className="bi bi-check2"></i>
+          </Button>
+        </div>
+          :
+        <Button 
+          onClick={changeToTrue}
+        >
+          <i class="bi bi-plus-lg"></i>
+        </Button>
+        }
+        
       </Modal.Footer>
     </Modal>
-  );
+);
+//onhide
 }

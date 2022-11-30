@@ -1,6 +1,5 @@
 import React from "react";
 import Header from "../components/Header";
-import {Container} from "react-bootstrap";
 import FrameProyect from "../components/FramesProyect"
 import "../styles/Dashboar.css"
 
@@ -10,7 +9,9 @@ const Dashboard = () =>{
         <div>
             <Header/>
             <div className="frame-container">
-                <FrameProyect metodologi="kanban"/>
+                <FrameProyect />
+                
+                
                 
             </div>
         
