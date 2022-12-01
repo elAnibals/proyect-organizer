@@ -17,6 +17,7 @@ const Header = () =>{
     <Navbar collapseOnSelect bg="dark" variant="dark">
       <Container fluid>
         <Navbar.Brand>
+          <Button size="lg"className="rounded-circle" variant="outline-primary">+</Button>
           <NavDropdown title={<img src={profile}/>} id="nav-dropdown">
             <NavDropdown.Item eventKey="4.1">Perfil</NavDropdown.Item>
             <NavDropdown.Divider />
@@ -25,17 +26,6 @@ const Header = () =>{
             <NavDropdown.Item eventKey="4.3">Cerrar Sesion</NavDropdown.Item>
           </NavDropdown>
         </Navbar.Brand>
-        <Nav>
-          <DropdownButton size="lg"
-            variant="outline-primary" 
-            title="Proyectos" 
-            id="bg-nested-dropdown"
-          >
-            <Dropdown.Item eventKey="1">Proyecto1</Dropdown.Item>
-            <Dropdown.Item eventKey="2">Proyecto2</Dropdown.Item>
-          </DropdownButton>
-        </Nav>
-        <Button size="lg"className="rounded-circle" variant="outline-primary">+</Button>
       </Container>
     </Navbar>
   );
